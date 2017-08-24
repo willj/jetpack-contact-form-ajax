@@ -1,8 +1,6 @@
 (function($){
 
-    $('<div />').attr({ class: 'jetpack-form-ajax-status-wrapper' }).insertBefore('.contact-submit');
-
-    $('.contact-form').on('submit', function(e){
+    function handleFormSubmit(e){
         e.preventDefault();
         
         var form = $(this);
@@ -17,9 +15,15 @@
             if (errors.length > 0){
                 statusWrapper.append(errors);
             } else {
-                $(response).find('#contact-form-' + formId + ' > h3').appendTo(statusWrapper);
+                $(response).find('.jetpack-form-ajax-success-message').appendTo(statusWrapper);
             }
         });
-    });
+    }
 
+    $(document).ready(function(){
+        $('<div />').attr({ class: 'jetpack-form-ajax-status-wrapper' }).insertBefore('.contact-submit');
+        
+        $('.contact-form').on('submit', handleFormSubmit);
+    });
+    
 })(jQuery);
