@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Jetpack Form Ajax
-Description: Send Jetpack contact forms via AJAX rather then with a postback
+Description: Send Jetpack contact forms via AJAX rather than with a postback
 Author: @willj
 */
 
